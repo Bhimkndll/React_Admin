@@ -1,0 +1,99 @@
+import React,{createContext} from "react";
+import {Link} from"react-router-dom";
+
+
+import { Redirect,useHistory } from 'react-router';
+import { useState, useEffect } from 'react';
+import PopularPost from './PopularPost';
+import Carousel from './Carousel';
+
+const First = createContext();
+
+const Fclient = (props) => {
+const [post, setPost] = React.useState({posts:''});
+const [load, setLoad] = React.useState({loads:false});
+
+useEffect(() => {
+  let isActive = true;
+
+        axios.get("/api/client/post")
+
+
+.then(res=>{
+      if (isActive) {
+
+console.log(res);
+  setPost({posts:res.data.posts});
+  setLoad({loads:true});
+}
+
+})
+    .catch((error) => console.log(error.message));
+
+  return () => {
+    isActive = false;
+  };
+}, []);
+
+
+
+
+
+  return(
+         <>
+{load.loads==true&&
+
+
+         <div className="container">
+{/*<!-- HEAder WITH NAVBAR AND AID -->
+<!-- SHort navbar -->
+*/}
+
+  <section id="newsSection">
+    <div className="row">
+      <div className="col-lg-12 col-md-12">
+{/*<!-- newstiker cha yata cai -->*/
+        }        </div>
+    </div>
+  </section>
+<Carousel/>
+
+
+{/*slidercarousel*/
+  }
+
+
+
+
+
+
+
+  <section id="contentSection">
+    <div className="row">
+      <div className="col-lg-8 col-md-8 col-sm-8">
+        <div className="left_content">
+       {  /*<!-- BuSINESS MODEL -->
+                <!-- Fashion -->
+               <!-- photography -->
+                <!-- Gmaes -->*/}
+        </div>
+      </div>
+      <div className="col-lg-4 col-md-4 col-sm-4">
+        <aside className="right_content">
+      {  /* <!-- Popular ko tala ko post -->
+      <!-- video commentesss WITH TAGAGAGAG -->
+      <!-- CAtegsory and with aid with sponsonrship aidd -->
+      <!-- LINKS  of last side lastako tala ko ho -->*/}
+        </aside>
+      </div>
+    </div>
+  </section>
+{/*  <!-- section pasi footer hai  -->
+*/}
+</div>
+
+}
+</>
+);
+}
+export default Fclient;

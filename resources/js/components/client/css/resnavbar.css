@@ -1,0 +1,293 @@
+
+body {
+  margin: 0;
+  font-size: 20px;
+  font-family: sans-serif;
+  line-height:1;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+.clear-all:after,
+.clear-all:before {
+  content: '';
+  display: table;
+  clear: both;
+  }
+li u :hover{
+
+border-radius: 5%;
+  background-color:#3092c0;
+}
+
+@media(max-width:800px) {
+.cm-menu-inner{
+    height: auto;
+    max-height: 500px;
+    overflow-x: hidden;
+
+
+}
+
+}
+@media(max-width:450px){
+  .bhim{
+    font-size:30px;
+    color:red;
+    padding-left:20px;
+  }
+}
+
+.cm-header-wrap{
+    text-align:bottom;
+
+    position:fixed;
+    top: 0;
+    left: 0;
+
+    background:#3092c0;
+    width: 100%;
+box-sizing: border-box;
+    padding-top:30px;
+  }
+
+
+
+.logo{
+color:#fff;
+height:50px;
+line-height:50px;
+float:left;
+font-weight:bold;
+      visibility: visible;
+
+}
+
+
+.cm-menu-inner ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+
+}
+
+.cm-menu-inner > ul {
+    display:block;
+}
+
+.cm-menu-inner > ul > li {
+    float: left;
+    padding: 0 10px;
+}
+
+.cm-menu-inner > ul  li a {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    padding-top:20px;
+
+}
+
+
+
+
+@media(min-width: 992px) {
+.cm-menu-inner > ul li ul li a{
+  text-align: center;
+}
+.cm-menu-inner > ul li ul li a:hover{
+  background-color:#3092c0;
+  color:white;
+ }
+  .cm-menu-inner ul ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background:rgba(129, 179, 223, 1);
+      min-width: 180px;
+
+      opacity: 0;
+      visibility: hidden;
+      transition: all 300ms linear;
+  }
+
+  .cm-menu-inner ul li.has-child {
+      position: relative;
+  }
+
+  .cm-menu-inner ul li.has-child:hover > ul {
+      opacity: 1;
+      visibility: visible;
+      box-shadow:rgb(00,0,0,12,121);
+
+  }
+
+  .cm-menu-inner ul ul ul {
+      left: 100%;
+      top: 0;
+  }
+
+  .cm-menu-inner {
+      display: flex;
+      justify-content: center;
+  }
+
+  .cm-menu-inner {
+      display: flex !important;
+  }
+
+  .cm-menu-inner ul {
+    display: block!important;
+  }
+
+  .cm-menu-btn, .child-menu-btn {
+      display: none!important;
+  }
+
+}
+
+
+
+@media(max-width: 991px) {
+
+  .cm-menu-inner {
+      position: absolute;
+      background-color:#3092c0;
+      width: 100%;
+      left: 0;
+      top: 100%;
+      display: none;
+      color:white;
+  }
+
+  .cm-menu-inner > ul > li {
+      float: none;
+      padding: 0;
+  }
+
+  .cm-menu-inner ul li > a {
+      border-bottom: 1px solid #848484;
+  }
+
+  .cm-menu-inner ul ul > li > a {
+      padding-left: 25px;
+  }
+
+  .cm-menu-inner ul ul ul > li > a {
+      padding-left: 35px;
+  }
+
+  .cm-menu-btn {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+  }
+
+  li.has-child {
+      position: relative;
+  }
+
+  .child-menu-btn {
+      color:red;
+      position:absolute;
+      right: 50px;
+      line-height: 40px!important;
+/*      border-left: 2px solid #fff;
+*/      width: 600px;
+      text-align:right;
+      cursor: pointer;
+      top: 0;
+  }
+
+  .cm-menu-inner ul ul {
+    display: none;
+  }
+
+}
+
+/* Banner*/
+
+.cm-header-wrap {
+  z-index: 11;
+}
+
+.banner {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner h1 {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 26px;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    padding: 16px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: Oswald, sans-serif;
+    letter-spacing: 1px;
+    width: 700px;
+    text-transform: capitalize;
+}
+
+.banner h1 a {
+  color: #fff;
+    text-decoration: none;
+    text-decoration: underline;
+    display: inline-block;
+    padding-top: 20px;
+    font-size: 45px;
+    text-shadow: 9px -1px 6px #000;
+  transition: all 300ms ease;
+}
+
+
+.banner h1 a:hover {
+    text-shadow: 5px -1px 14px #000;
+}
+
+@media(max-width: 767px) {
+
+  .banner h1 {
+      max-width: 90%;
+      width: 100%;
+  }
+
+}/*
+@media(min-width:400px) {
+.cm-header-wrap{
+    text-align:bottom;
+    max-height:200px;
+    position:fixed;
+    top: 0;
+    left: 0;
+
+    background:#3092c0;
+    width: 100%;
+box-sizing: border-box;
+    padding-top:30px;
+
+}
+.scroll {
+  height: auto;
+    max-height: 800px;
+    overflow-x: hidden;
+
+
+}
+}*/
