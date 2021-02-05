@@ -70530,7 +70530,7 @@ var Clientview = /*#__PURE__*/function (_React$Component) {
         component: Subpost
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Redirect"], {
         to: "/"
-      })))));
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_client_Footers__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
     }
   }]);
 
@@ -72194,8 +72194,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\bhim kandel\desktop\reactcrud\resources\js\clientview.js */"./resources/js/clientview.js");
-module.exports = __webpack_require__(/*! C:\Users\bhim kandel\desktop\reactcrud\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\bhim kandel\Desktop\Reactcrud\resources\js\clientview.js */"./resources/js/clientview.js");
+module.exports = __webpack_require__(/*! C:\Users\bhim kandel\Desktop\Reactcrud\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

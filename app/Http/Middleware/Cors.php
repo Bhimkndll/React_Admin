@@ -16,7 +16,7 @@ class Cors
    public function handle($request, Closure $next)
 {
     return $next($request)
-        ->header('Access-Control-Allow-Origin', '*')
+        ->header('Access-Control-Allow-Origin', 'https://peaceful-earth-77113.herokuapp.com/')
         ->header('Access-Control-Allow-Credentials','true')
 
         ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
