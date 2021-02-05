@@ -69,7 +69,7 @@ if(!Auth::attempt($credentials))
 
         return response()->json([
 
-        'sucess'=>'store'])->withCookie('token-access',Str::random(60),60, null, null, false, false);
+        'sucess'=>'store'],200)->withCookie('token-access',Str::random(60),60, null, null, false, false);
     }
 
 
