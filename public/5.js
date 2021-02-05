@@ -169,7 +169,7 @@ var Register = function Register() {
       });
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.withCredentials = true;
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/sanctum/csrf-cookie').then(function (response) {
-        var res = axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://127.0.0.1:8000/api/auth/signup", values).then(function (res) {
+        var res = axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("https://peaceful-earth-77113.herokuapp.com/api/auth/signup", values).then(function (res) {
           setOther({
             other: "Hi!" + res.data.user + "." + res.data.success
           });
