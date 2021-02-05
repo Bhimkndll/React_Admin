@@ -103,7 +103,7 @@ var ProductTable = react_loadable__WEBPACK_IMPORTED_MODULE_7___default()({
 });
 var Fotter = react_loadable__WEBPACK_IMPORTED_MODULE_7___default()({
   loader: function loader() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(18)]).then(__webpack_require__.bind(null, /*! ./././admin/fotter/Fotter */ "./resources/js/components/admin/fotter/Fotter.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(20), __webpack_require__.e(18)]).then(__webpack_require__.bind(null, /*! ./././admin/fotter/Fotter */ "./resources/js/components/admin/fotter/Fotter.js"));
   },
   loading: function loading() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading");
