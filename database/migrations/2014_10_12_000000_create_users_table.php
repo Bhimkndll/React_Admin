@@ -20,10 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('avatar')->default('avatar.png');
 
-            $table->boolean('active')->default(false);
+            $table->boolean('active')->default(true);
             $table->string('activation_token');
             $table->rememberToken();
-            
+
             $table->timestamps();
             $table->softDeletes();
         });
