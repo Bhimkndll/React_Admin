@@ -70530,7 +70530,7 @@ var Clientview = /*#__PURE__*/function (_React$Component) {
         component: Subpost
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Redirect"], {
         to: "/"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_client_Footers__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
+      })))));
     }
   }]);
 
