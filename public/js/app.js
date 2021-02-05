@@ -70694,7 +70694,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var Login = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
   loader: function loader() {
-    return Promise.all(/*! import() */[__webpack_require__.e(20), __webpack_require__.e(3), __webpack_require__.e(5), __webpack_require__.e(16)]).then(__webpack_require__.bind(null, /*! ./././components/Views/Login/Login.js */ "./resources/js/components/Views/Login/Login.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(5), __webpack_require__.e(16)]).then(__webpack_require__.bind(null, /*! ./././components/Views/Login/Login.js */ "./resources/js/components/Views/Login/Login.js"));
   },
   loading: function loading() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading");
@@ -70702,7 +70702,7 @@ var Login = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
 });
 var Register = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
   loader: function loader() {
-    return Promise.all(/*! import() */[__webpack_require__.e(20), __webpack_require__.e(3), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./././components/Views/Register/Register.js */ "./resources/js/components/Views/Register/Register.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./././components/Views/Register/Register.js */ "./resources/js/components/Views/Register/Register.js"));
   },
   loading: function loading() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading");

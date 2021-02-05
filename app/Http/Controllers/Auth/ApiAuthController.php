@@ -35,8 +35,8 @@ class ApiAuthController extends Controller
         'email'=>$request->email,
         'password'=>bcrypt($request->password),
         'activation_token' => Str::random(60)]);
-        $user->notify(new signupActivate($user));
-
+/*        $user->notify(new signupActivate($user));
+*/
        $user->save();
 
 
