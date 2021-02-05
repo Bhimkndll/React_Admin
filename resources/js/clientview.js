@@ -47,7 +47,6 @@ return (
       </>
 
 
-<Footers/>
 
       </div>
       </Router>

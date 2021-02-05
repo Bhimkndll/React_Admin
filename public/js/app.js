@@ -70896,7 +70896,7 @@ var Authe = function Authe() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\bhim kandel\Desktop\Reactcrud\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\bhim kandel\desktop\reactcrud\resources\js\app.js */"./resources/js/app.js");
 
 
 /***/ })
