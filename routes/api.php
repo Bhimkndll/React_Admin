@@ -102,7 +102,6 @@ Route::get('/followers/{id}','Api\FollowController@followers')->name('friends');
 
 
 Route::post('/navbar/create','Api\NavbarclientController@create')->name('navbar');
-Route::get('/navbar','Api\NavbarclientController@index')->name('navbar');
 
 
 
@@ -177,3 +176,4 @@ Route::get('/client/post/carousel','User\ClientController@mainslider');
 
 Route::get('/client/fotter','User\ClientController@fotter');
 Route::get('/follow','Api\FollowController@index')->name('follow');
+Route::get('/navbar','Api\NavbarclientController@index')->name('navbar');
