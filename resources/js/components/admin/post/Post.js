@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 const useSortableData = (items, config = null) => {
-
   const [sortConfig, setSortConfig] = React.useState(config);
     const [comment, setComment] = useState('bhom');
 
@@ -41,7 +40,7 @@ const useSortableData = (items, config = null) => {
   return { items: sortedItems, requestSort, sortConfig };
 };
 
- 
+
 
 const ProductTable = (props) => {
 
@@ -58,7 +57,7 @@ useEffect(() => {
   let isActive = true;
 
         axios.get("/api/category")
-    
+
 
 .then(res=>{
       if (isActive) {
@@ -93,12 +92,12 @@ Swal.fire({
   confirmButtonText: 'Yes, delete it!'
 }).then((result) => {
 
-          
+
 if (result.isConfirmed) {
 let url = `http://127.0.0.1:8000/api/category/delete/${id}`
 
         axios.get(url).then(res =>{});
-     
+
         axios.get("/api/category")
     .then(res=>{
   setState({bhim:res.data.categories});
@@ -115,7 +114,7 @@ let url = `http://127.0.0.1:8000/api/category/delete/${id}`
 
 
 
-} 
+}
 const Editcategory = (id) => {
      setLoad({load:'true'});
 
@@ -125,7 +124,7 @@ const Editcategory = (id) => {
         });
 
 
-}  
+}
 
     const handleSubmit = (evt) => {
        evt.preventDefault();
@@ -141,9 +140,9 @@ const Editcategory = (id) => {
   setState({bhim:res.data.categories});
   setLoad({load:'true'});
 setForm({category:'',id:'',title:''});
-      
 
-});     
+
+});
  Swal.fire(
       'Update',
       'Your file has been Update.',
@@ -165,9 +164,9 @@ setForm({category:'',id:'',title:''});
       [e.target.name]: e.target.value
     });
   };
-  
-        
-    
+
+
+
   return (
     <>
 
@@ -182,7 +181,7 @@ dfdgdfg😜
         </button>
       </div>
       <div className="modal-body">
-        
+
 
  <form onSubmit={handleSubmit}>
 
@@ -238,7 +237,7 @@ onChange={handleChange}
       </div>
     </div>
   </div>
-  
+
 </div>
   <input
                 type='text'
@@ -250,7 +249,7 @@ onChange={handleChange}
                 aria-describedby='emailHelp'
                 placeholder='Title'
               />
-            
+
 
 
 
@@ -264,8 +263,8 @@ onChange={handleChange}
 <table className="table table-sm" id="myTable">
 
 
-  
-     
+
+
       <caption>Products</caption>
       <thead>
 
@@ -289,11 +288,11 @@ onChange={handleChange}
               onClick={() => requestSort('name')}
               className={getClassNamesFor('name')}
             >
-              Name 
-              
-             
+              Name
+
+
             </button>
-             
+
           </th>
       <th scope="col">
             <button
@@ -314,16 +313,16 @@ onChange={handleChange}
       <tbody>
 
 
-        
+
 {
 
   loading.load=='true'&&
-  
+
           items.map(item => {
  if(form.title !== ""&& item.name.toLowerCase().indexOf(form.title.toLowerCase() ) === -1 ){
-        
+
         return null
-}    
+}
       return(
         <tr key={item.id}>
             <td>{item.id}</td>
@@ -332,11 +331,11 @@ onChange={handleChange}
   <button onClick={() => removeData(item.id)}>Delete</button></td></tr>
         );
       })
-      
+
       }
 
 
-  
+
 
       </tbody>
     </table>

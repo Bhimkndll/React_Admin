@@ -45,6 +45,7 @@ const [search, setSearch] = React.useState('');
 const numbers = [40, 70, 80, 100, 20, 200, 0, 20, 10, 15, 10, 10, 100, 210, 110, 103, 102, 101, 10];
 
 console.log(numbers.slice(-8, -2).reverse());
+console.log(global.link);
 
  const handlecheckd = ({ target }) => {
     const _id = parseInt(target.value,10);

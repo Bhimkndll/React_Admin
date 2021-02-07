@@ -11,6 +11,7 @@ import {BrowserRouter as Router,Link,Switch,Route,Redirect} from'react-router-do
 
  const Login = (props) => {
 const cookies = new Cookies();
+var link= global.link;
 
 const [error, setErr] = React.useState({all:'',open:false});
 const [emailerror, setEmailerr] = React.useState({allemail:''});
@@ -47,8 +48,7 @@ setEmailerr({allemail:''});
      axios.defaults.withCredentials = true;
    axios.get('/sanctum/csrf-cookie').then(response => {
 
-
-     const res =axios.post("https://peaceful-earth-77113.herokuapp.com/api/auth/login",values)
+     const res =axios.post("/api/auth/login",values)
         .then(res=>{
 
          props.history.push('/admin/new');

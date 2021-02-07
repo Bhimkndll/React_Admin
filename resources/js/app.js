@@ -9,7 +9,7 @@ import {BrowserRouter as Router,Link,Switch,Route,Redirect} from'react-router-do
 import axios from 'axios';
 import AdminRoute from './components/AdminRoute';
 import Authe from './components/Authe';
-
+import './components/global';
 require('./bootstrap');
 
 const Login = Loadable({

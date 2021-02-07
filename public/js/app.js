@@ -70660,6 +70660,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _components_AdminRoute__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/AdminRoute */ "./resources/js/components/AdminRoute.js");
 /* harmony import */ var _components_Authe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Authe */ "./resources/js/components/Authe.js");
+/* harmony import */ var _components_global__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/global */ "./resources/js/components/global.js");
+/* harmony import */ var _components_global__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_global__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -70690,11 +70692,12 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var Login = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
   loader: function loader() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(5), __webpack_require__.e(16)]).then(__webpack_require__.bind(null, /*! ./././components/Views/Login/Login.js */ "./resources/js/components/Views/Login/Login.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(20), __webpack_require__.e(3), __webpack_require__.e(5), __webpack_require__.e(16)]).then(__webpack_require__.bind(null, /*! ./././components/Views/Login/Login.js */ "./resources/js/components/Views/Login/Login.js"));
   },
   loading: function loading() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading");
@@ -70702,7 +70705,7 @@ var Login = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
 });
 var Register = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
   loader: function loader() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./././components/Views/Register/Register.js */ "./resources/js/components/Views/Register/Register.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(20), __webpack_require__.e(3), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./././components/Views/Register/Register.js */ "./resources/js/components/Views/Register/Register.js"));
   },
   loading: function loading() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading");
@@ -70886,6 +70889,18 @@ var Authe = function Authe() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Authe);
+
+/***/ }),
+
+/***/ "./resources/js/components/global.js":
+/*!*******************************************!*\
+  !*** ./resources/js/components/global.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {global.link = "bhim kandel is hancy man";
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 

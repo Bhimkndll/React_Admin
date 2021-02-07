@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
@@ -47,6 +47,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var Login = function Login(props) {
   var cookies = new universal_cookie__WEBPACK_IMPORTED_MODULE_6__["default"]();
+  var link = global.link;
 
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState({
     all: '',
@@ -110,7 +111,7 @@ var Login = function Login(props) {
       });
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.withCredentials = true;
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/sanctum/csrf-cookie').then(function (response) {
-        var res = axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("https://peaceful-earth-77113.herokuapp.com/api/auth/login", values).then(function (res) {
+        var res = axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/auth/login", values).then(function (res) {
           props.history.push('/admin/new');
         })["catch"](function (error) {
           console.log(error.response);
@@ -224,6 +225,7 @@ var Login = function Login(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Login);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ })
 

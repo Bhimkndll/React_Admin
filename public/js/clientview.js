@@ -70466,6 +70466,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_client_Fclient__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/client/Fclient */ "./resources/js/components/client/Fclient.js");
 /* harmony import */ var _components_client_Footers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/client/Footers */ "./resources/js/components/client/Footers.js");
 /* harmony import */ var _components_client_Navbar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/client/Navbar */ "./resources/js/components/client/Navbar.js");
+/* harmony import */ var _components_global__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/global */ "./resources/js/components/global.js");
+/* harmony import */ var _components_global__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_global__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -70487,6 +70489,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -70567,7 +70570,6 @@ var Businessnews = function Businessnews(props) {
     return str.split(" ").splice(0, no_words).join(" ");
   }
 
-  console.log("bhim");
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "single_post_content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, props.business)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -72173,6 +72175,18 @@ var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/li
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/global.js":
+/*!*******************************************!*\
+  !*** ./resources/js/components/global.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {global.link = "bhim kandel is hancy man";
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 

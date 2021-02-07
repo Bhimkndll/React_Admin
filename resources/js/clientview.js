@@ -6,7 +6,7 @@ import {BrowserRouter as Router,Link,Switch,Route,Redirect} from'react-router-do
 import Fclient from './components/client/Fclient';
 import Footers from './components/client/Footers';
 import Navbar from './components/client/Navbar';
-
+import './components/global';
 
 const Subpost = Loadable({
   loader: () => import('./components/client/subclient/Subpost'),
