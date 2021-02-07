@@ -60,7 +60,7 @@ setName({name:'',lname:''});
    axios.get('/sanctum/csrf-cookie').then(response => {
 
 
-     const res =axios.post("https://peaceful-earth-77113.herokuapp.com/api/auth/signup",values)
+     const res =axios.post("/api/auth/signup",values)
         .then(res=>{
 
 setOther({other:"Hi!"+res.data.user+"." + res.data.success});

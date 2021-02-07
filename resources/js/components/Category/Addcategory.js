@@ -9,19 +9,19 @@ class Addcategory extends  React.Component{
 	super(props);
 
 	this.state = {
-    
+
 		name: '',
-		
+
 		errors:[],
-		
+
 		nameerr:'',
-		
+
 		err:'',
 		status:'',
 	}
 }
 
-	
+
 	handleInput= (e) =>{
 	this.setState({[e.target.name]:e.target.value});
 }
@@ -32,15 +32,15 @@ SaveContact= async (e) => {
    const response =axios.post("http://127.0.0.1:8000/api/category/store",this.state)
        	.then(response=>{
        		this.setState({
-       			
-       
+
+
        		 errors:response.data.errors,
        		 status:response.data.status
-       		
+
 
        	});
 
-      
+
  {this.state.status&& this.props.history.push('/contact/')
 	}
 
@@ -48,30 +48,30 @@ SaveContact= async (e) => {
        	});
 
 
-  
+
 }
-	
+
    onS = () => {
-     
+
          this.props.history.push('/contact/');
      }
 
- 
+
 	render()
 
 
 {
 	    const { errors} =this.state;
 
-       	
+
 
 		return(
-		
+
 			<div>
-		
+
   {errors&&this.state.errors.map(error=>{
- 	
-	
+
+
 
 if(error.includes('name')){
 
@@ -79,18 +79,18 @@ if(error.includes('name')){
 }
 
 
- 
 
-       
+
+
        })
 }
-   
-	
+
+
 
 
 
 			<form onSubmit={this.SaveContact}>
-			
+
 
 			<div className="form-group">
 			<p className="text-danger"id="p">{this.state.status}</p>
@@ -103,10 +103,10 @@ if(error.includes('name')){
     <input type="submit" className="btn btn-primary"/>
     </div>
 			</form>
-	</div>	
-	
+	</div>
+
 			)
-	
+
 }
 }
- export default Addcategory; 
+ export default Addcategory;

@@ -578,7 +578,7 @@ var Profile = function Profile(props) {
 
   var handleSubmit = function handleSubmit(evt) {
     evt.preventDefault();
-    axios.post("http://127.0.0.1:8000/api/profile/save/".concat(profile.user.id), user);
+    axios.post("/api/profile/save/".concat(profile.user.id), user);
     axios.get("/api/profile").then(function (res) {
       setProfile({
         user: res.data.userprofile

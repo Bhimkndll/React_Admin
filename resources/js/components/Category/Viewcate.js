@@ -12,7 +12,7 @@ class Viewcate extends React.Component {
       search: "",
       error: null,
       products:[],
-     
+
     isLoaded: false,
   }
   }
@@ -28,7 +28,7 @@ if(this.state.admin==="bhim"){
       this.setState({
            isLoaded: true,
            products:response.data.categories,
-          
+
 });
 console.log(response);
  }),
@@ -40,20 +40,20 @@ console.log(response);
         }
 
 }
-   
-     
+
+
    }
 
   onDelete(categoryid)
   {
     axios.get('http://127.0.0.1:8000/api/category/delete/'+categoryid)
      axios.get('/api/category')
-    
+
      .then(response=>{
       this.setState({
            isLoaded: true,
            products:response.data.categories,
-          
+
 
 });
  })
@@ -67,8 +67,8 @@ console.log(response);
 
  if( this.state.search !== "" && category.name.toLowerCase().indexOf( this.state.search.toLowerCase() ) === -1 ){
         return null
-      }   
-    
+      }
+
     return (
       <tr>
         <td>{category.name}</td>
@@ -80,29 +80,29 @@ console.log(response);
   });
 }
 
-     
-  
+
+
 
   render() {
-    
+
     const { search,error,isLoaded,products} = this.state;
 
     if(error) {
       return <div> Error: {error.message}</div>;
       }
-      
+
     else if(!isLoaded){
- return <div id="status">&nbsp;</div>; 
+ return <div id="status">&nbsp;</div>;
 
       }
     else {
-        
+
       return(
 
 
 
         <div>
-        
+
 <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Launch demo modal
 </button>
@@ -118,7 +118,7 @@ console.log(response);
         </button>
       </div>
       <div className="modal-body">
-        
+
 
  <form>
 
@@ -128,7 +128,7 @@ console.log(response);
               </div>
 
       <div className="form-group">
-            <input type="submit" 
+            <input type="submit"
             className="btn btn-primary"value="Updatecrud"/>
       </div>
       </form>

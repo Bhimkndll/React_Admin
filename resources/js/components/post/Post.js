@@ -66,7 +66,7 @@ console.log(form.tag);
 
 const Control=(id)=>{
   console.log(id);
-let url = `http://127.0.0.1:8000/api/post/maincontent/${id}`
+let url = `api/post/maincontent/${id}`
         axios.get(url).then(res =>{
 
         })
@@ -137,7 +137,7 @@ Swal.fire({
 
 
 if (result.isConfirmed) {
-let url = `http://127.0.0.1:8000/api/post/destroy/${id}`
+let url = `/api/post/destroy/${id}`
 
         axios.get(url).then(res =>{});
 
@@ -174,7 +174,7 @@ const fd = new FormData();
   fd.append('slug',form.slug);
   fd.append('description',description.editorState && draftToMarkdown(convertToRaw(description.editorState.getCurrentContent())));
 
-axios.post('http://127.0.0.1:8000/api/post/store',fd)
+axios.post('/api/post/store',fd)
   .then(res=>{
 
 
@@ -208,7 +208,7 @@ setBhim({herr:'',derr:'',ierr:'',serr:'',terr:''});
             setHide({hide:false});
             setShowd({display:true});
        setUpdate({update:true});
-       let url = `http://127.0.0.1:8000/api/post/edit/${id}`
+       let url = `/api/post/edit/${id}`
         axios.get(url).then(res =>{
           console.log(res);
           setForm({title:'',id:res.data.posts[0].id,category:res.data.posts[0].category_id,description:res.data.posts[0].description,heading:res.data.posts[0].heading,slug:res.data.posts[0].slug,image:res.data.posts[0].image,cateedit:res.data.posts[0].category_id});
@@ -232,7 +232,7 @@ setDesc({editorState: EditorState.createWithContent(ContentState.createFromText(
        evt.preventDefault();
 
 
-    axios.post(`http://127.0.0.1:8000/api/post/save/${form.id}`,form)
+    axios.post(`/api/post/save/${form.id}`,form)
 
      axios.get("/api/post")
 
@@ -285,7 +285,7 @@ const Switch=(id,pid)=>{
   console.log(id);
     console.log(pid);
 
- let url = `http://127.0.0.1:8000/api/post/switch/${id}/${pid}`
+ let url = `/api/post/switch/${id}/${pid}`
         axios.get(url).then(res =>{
 
         });
@@ -293,7 +293,7 @@ const Switch=(id,pid)=>{
 
 const Slider=(id)=>{
 
- let url = `http://127.0.0.1:8000/api/post/slider/${id}`
+ let url = `/api/post/slider/${id}`
         axios.get(url).then(res =>{
 
         })
@@ -303,7 +303,7 @@ const Slider=(id)=>{
 const Carousel=(id)=>{
 
 console.log(id);
- let url = `http://127.0.0.1:8000/api/post/carousel/${id}`
+ let url = `/api/post/carousel/${id}`
         axios.get(url).then(res =>{
 
         })
@@ -332,7 +332,7 @@ const fd = new FormData();
   fd.append('category',form.category);
   fd.append('slug',form.slug);
   fd.append('description',description.editorState && draftToMarkdown(convertToRaw(description.editorState.getCurrentContent())));
-  axios.post(`http://127.0.0.1:8000/api/post/save/${form.id}`,fd)
+  axios.post(`/api/post/save/${form.id}`,fd)
 .then(res=>{
     setShow(false);
 

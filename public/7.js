@@ -787,7 +787,7 @@ var Post = function Post(props) {
 
   var Control = function Control(id) {
     console.log(id);
-    var url = "http://127.0.0.1:8000/api/post/maincontent/".concat(id);
+    var url = "api/post/maincontent/".concat(id);
     axios.get(url).then(function (res) {})["catch"](function (error) {
       return console.log(error.message);
     });
@@ -862,7 +862,7 @@ var Post = function Post(props) {
       confirmButtonText: 'Yes, delete it!'
     }).then(function (result) {
       if (result.isConfirmed) {
-        var url = "http://127.0.0.1:8000/api/post/destroy/".concat(id);
+        var url = "/api/post/destroy/".concat(id);
         axios.get(url).then(function (res) {});
         axios.get("/api/post/index").then(function (res) {
           setPost({
@@ -900,7 +900,7 @@ var Post = function Post(props) {
     fd.append('category', form.category);
     fd.append('slug', form.slug);
     fd.append('description', description.editorState && draftjs_to_markdown__WEBPACK_IMPORTED_MODULE_9___default()(Object(draft_js__WEBPACK_IMPORTED_MODULE_7__["convertToRaw"])(description.editorState.getCurrentContent())));
-    axios.post('http://127.0.0.1:8000/api/post/store', fd).then(function (res) {
+    axios.post('/api/post/store', fd).then(function (res) {
       axios.get("/api/post/index").then(function (res) {
         setPost({
           posts: res.data.posts
@@ -949,7 +949,7 @@ var Post = function Post(props) {
     setUpdate({
       update: true
     });
-    var url = "http://127.0.0.1:8000/api/post/edit/".concat(id);
+    var url = "/api/post/edit/".concat(id);
     axios.get(url).then(function (res) {
       console.log(res);
       setForm({
@@ -977,7 +977,7 @@ var Post = function Post(props) {
   var handleSubmit = function handleSubmit(evt) {
     console.log(form.checkedItems);
     evt.preventDefault();
-    axios.post("http://127.0.0.1:8000/api/post/save/".concat(form.id), form);
+    axios.post("/api/post/save/".concat(form.id), form);
     axios.get("/api/post").then(function (res) {
       setState({
         bhim: res.data.categories
@@ -1048,12 +1048,12 @@ var Post = function Post(props) {
   var Switch = function Switch(id, pid) {
     console.log(id);
     console.log(pid);
-    var url = "http://127.0.0.1:8000/api/post/switch/".concat(id, "/").concat(pid);
+    var url = "/api/post/switch/".concat(id, "/").concat(pid);
     axios.get(url).then(function (res) {});
   };
 
   var Slider = function Slider(id) {
-    var url = "http://127.0.0.1:8000/api/post/slider/".concat(id);
+    var url = "/api/post/slider/".concat(id);
     axios.get(url).then(function (res) {})["catch"](function (error) {
       return console.log(error.message);
     });
@@ -1061,7 +1061,7 @@ var Post = function Post(props) {
 
   var Carousel = function Carousel(id) {
     console.log(id);
-    var url = "http://127.0.0.1:8000/api/post/carousel/".concat(id);
+    var url = "/api/post/carousel/".concat(id);
     axios.get(url).then(function (res) {})["catch"](function (error) {
       return console.log(error.message);
     });
@@ -1095,7 +1095,7 @@ var Post = function Post(props) {
     fd.append('category', form.category);
     fd.append('slug', form.slug);
     fd.append('description', description.editorState && draftjs_to_markdown__WEBPACK_IMPORTED_MODULE_9___default()(Object(draft_js__WEBPACK_IMPORTED_MODULE_7__["convertToRaw"])(description.editorState.getCurrentContent())));
-    axios.post("http://127.0.0.1:8000/api/post/save/".concat(form.id), fd).then(function (res) {
+    axios.post("/api/post/save/".concat(form.id), fd).then(function (res) {
       setShow(false);
       axios.get("/api/posts").then(function (res) {
         setForm({

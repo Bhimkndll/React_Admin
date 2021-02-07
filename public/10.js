@@ -226,7 +226,7 @@ var Tagcr = function Tagcr(props) {
       confirmButtonText: 'Yes, delete it!'
     }).then(function (result) {
       if (result.isConfirmed) {
-        var url = "http://127.0.0.1:8000/api/tag/delete/".concat(id);
+        var url = "/api/tag/delete/".concat(id);
         axios.get(url).then(function (res) {});
         axios.get("/api/tag").then(function (res) {
           setState({
@@ -251,7 +251,7 @@ var Tagcr = function Tagcr(props) {
 
   var handlecreate = function handlecreate(evt) {
     evt.preventDefault();
-    axios.post("http://127.0.0.1:8000/api/tag/store", form);
+    axios.post("/api/tag/store", form);
     axios.get("/api/tag").then(function (res) {
       setState({
         tags: res.data.categories
@@ -275,7 +275,7 @@ var Tagcr = function Tagcr(props) {
     setUpdate({
       update: true
     });
-    var url = "http://127.0.0.1:8000/api/tag/edit/".concat(id);
+    var url = "/api/tag/edit/".concat(id);
     axios.get(url).then(function (res) {
       setForm({
         tag: res.data.tag.Tag_name,
@@ -287,7 +287,7 @@ var Tagcr = function Tagcr(props) {
 
   var handleSubmit = function handleSubmit(evt) {
     evt.preventDefault();
-    axios.post("http://127.0.0.1:8000/api/tag/save/".concat(form.id), form);
+    axios.post("/api/tag/save/".concat(form.id), form);
     axios.get("/api/tag").then(function (res) {
       setState({
         tags: res.data.categories

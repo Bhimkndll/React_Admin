@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 import { Redirect,useHistory } from 'react-router';
 import { useState, useEffect } from 'react';
- 
+
 
 const Navbarclient = (props) => {
   const [navs, setNav] = React.useState({nav:'',items:''});
@@ -17,7 +17,7 @@ useEffect(() => {
   let isActive = true;
 
         axios.get("/api/navbar")
-    
+
 
 .then(res=>{
 
@@ -48,7 +48,7 @@ useEffect(() => {
 
 
 
-  
+
   const handleChange = e => {
     setNav({
       ...navs,
@@ -59,7 +59,7 @@ const handleSubmit = (evt) => {
        evt.preventDefault();
 axios.post(`/api/navbar/create`,navs)
    .then(res=>{
-});     
+});
  }
 return (
     <>
@@ -69,7 +69,7 @@ return (
     <div className="col">
 
   <form onSubmit={handleSubmit}>
-      
+
 
       <div className="form-group">
 
@@ -83,7 +83,7 @@ return (
 
 
 
-    
+
 
 </form>
 

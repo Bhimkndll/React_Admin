@@ -1,1 +1,1 @@
-global.link ="bhim kandel is hancy man";
+global.link ="https://peaceful-earth-77113.herokuapp.com";

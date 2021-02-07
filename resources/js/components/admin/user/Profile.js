@@ -50,7 +50,7 @@ setLoad({load:true,icon:false});
     const handleSubmit = (evt) => {
        evt.preventDefault();
 
-    axios.post(`http://127.0.0.1:8000/api/profile/save/${profile.user.id}`,user)
+    axios.post(`/api/profile/save/${profile.user.id}`,user)
 
      axios.get("/api/profile")
 

@@ -70899,7 +70899,7 @@ var Authe = function Authe() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {global.link = "bhim kandel is hancy man";
+/* WEBPACK VAR INJECTION */(function(global) {global.link = "https://peaceful-earth-77113.herokuapp.com";
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),

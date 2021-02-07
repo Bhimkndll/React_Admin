@@ -13,12 +13,11 @@ import {useSortableData} from './Sortt';
  const [loading, setLoad] = React.useState({load:'true'});
 const [tate, setState] = React.useState({bhim:''});
 const [update, setUpdate] = React.useState({update:true});
-
 useEffect(() => {
   let isActive = true;
  const access=localStorage.getItem('token-access')
 
-        axios.get("/api/category")
+        axios.get(global.link+"/api/category")
 
 
 .then(res=>{
@@ -49,9 +48,9 @@ Swal.fire({
 
 
 if (result.isConfirmed) {
-let url = `http://127.0.0.1:8000/api/category/delete/${id}`
+let url = `/api/category/delete/${id}`
 
-        axios.get(url).then(res =>{});
+        axios.get(global.link+url).then(res =>{});
 
         axios.get("/api/category")
     .then(res=>{
@@ -79,7 +78,7 @@ const create=()=>{
 const handlecreate=(evt)=>{
     evt.preventDefault();
 
-    axios.post(`http://127.0.0.1:8000/api/category/store`,form)
+    axios.post(global.link+`/api/category/store`,form)
 
      axios.get("/api/category")
 
@@ -103,7 +102,7 @@ const Editcategory = (id) => {
        setUpdate({update:true});
 
 
-        let url = `http://127.0.0.1:8000/api/category/edit/${id}`
+        let url = global.link+`/api/category/edit/${id}`
         axios.get(url).then(res =>{
       setForm({category:res.data.category.name,id:res.data.category.id,title:''});
         });
@@ -114,7 +113,7 @@ const Editcategory = (id) => {
     const handleSubmit = (evt) => {
        evt.preventDefault();
 
-    axios.post(`http://127.0.0.1:8000/api/category/save/${form.id}`,form)
+    axios.post(global.link+`/api/category/save/${form.id}`,form)
 
      axios.get("/api/category")
 

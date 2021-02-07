@@ -48,7 +48,7 @@ Swal.fire({
 
 
 if (result.isConfirmed) {
-let url = `http://127.0.0.1:8000/api/tag/delete/${id}`
+let url = `/api/tag/delete/${id}`
 
         axios.get(url).then(res =>{});
 
@@ -78,7 +78,7 @@ const create=()=>{
 const handlecreate=(evt)=>{
     evt.preventDefault();
 
-    axios.post(`http://127.0.0.1:8000/api/tag/store`,form)
+    axios.post(`/api/tag/store`,form)
 
      axios.get("/api/tag")
 
@@ -102,7 +102,7 @@ const Editcategory = (id) => {
        setUpdate({update:true});
 
 
-        let url = `http://127.0.0.1:8000/api/tag/edit/${id}`
+        let url = `/api/tag/edit/${id}`
         axios.get(url).then(res =>{
       setForm({tag:res.data.tag.Tag_name,id:res.data.tag.id,title:''});
         });
@@ -113,7 +113,7 @@ const Editcategory = (id) => {
     const handleSubmit = (evt) => {
        evt.preventDefault();
 
-    axios.post(`http://127.0.0.1:8000/api/tag/save/${form.id}`,form)
+    axios.post(`/api/tag/save/${form.id}`,form)
 
      axios.get("/api/tag")
 

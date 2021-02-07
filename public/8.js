@@ -69,7 +69,7 @@ module.exports = "/images/Delete.gif?9c1ce30ba86bbcef9870a7d0ac64bb36";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.css */ "./resources/js/components/styles.css");
@@ -141,7 +141,7 @@ var ProductTable = function ProductTable(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var isActive = true;
     var access = localStorage.getItem('token-access');
-    axios.get("/api/category").then(function (res) {
+    axios.get(global.link + "/api/category").then(function (res) {
       if (isActive) {
         setState({
           bhim: res.data.categories
@@ -166,8 +166,8 @@ var ProductTable = function ProductTable(props) {
       confirmButtonText: 'Yes, delete it!'
     }).then(function (result) {
       if (result.isConfirmed) {
-        var url = "http://127.0.0.1:8000/api/category/delete/".concat(id);
-        axios.get(url).then(function (res) {});
+        var url = "/api/category/delete/".concat(id);
+        axios.get(global.link + url).then(function (res) {});
         axios.get("/api/category").then(function (res) {
           setState({
             bhim: res.data.categories
@@ -191,7 +191,7 @@ var ProductTable = function ProductTable(props) {
 
   var handlecreate = function handlecreate(evt) {
     evt.preventDefault();
-    axios.post("http://127.0.0.1:8000/api/category/store", form);
+    axios.post(global.link + "/api/category/store", form);
     axios.get("/api/category").then(function (res) {
       setState({
         bhim: res.data.categories
@@ -215,7 +215,7 @@ var ProductTable = function ProductTable(props) {
     setUpdate({
       update: true
     });
-    var url = "http://127.0.0.1:8000/api/category/edit/".concat(id);
+    var url = global.link + "/api/category/edit/".concat(id);
     axios.get(url).then(function (res) {
       setForm({
         category: res.data.category.name,
@@ -227,7 +227,7 @@ var ProductTable = function ProductTable(props) {
 
   var handleSubmit = function handleSubmit(evt) {
     evt.preventDefault();
-    axios.post("http://127.0.0.1:8000/api/category/save/".concat(form.id), form);
+    axios.post(global.link + "/api/category/save/".concat(form.id), form);
     axios.get("/api/category").then(function (res) {
       setState({
         bhim: res.data.categories
@@ -462,6 +462,7 @@ var ProductTable = function ProductTable(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProductTable);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
