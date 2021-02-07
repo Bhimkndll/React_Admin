@@ -85,8 +85,7 @@ var Login = function Login(props) {
       hide = _React$useState10[0],
       setHide = _React$useState10[1];
 
-  console.log(cookies.get('token-access')); // Pacman
-
+  console.log(cookies.get('token-access'));
   var formik = Object(formik__WEBPACK_IMPORTED_MODULE_3__["useFormik"])({
     initialValues: {
       password: '',

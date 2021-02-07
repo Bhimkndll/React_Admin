@@ -19,7 +19,7 @@ const [passerror, setPassworderr] = React.useState({allpass:''});
 const [other, setOthererr] = React.useState({allother:''});
 const [hide, setHide] = React.useState({hide:false});
 
- console.log(cookies.get('token-access')); // Pacman
+ console.log(cookies.get('token-access'));
 
 
   const formik = useFormik({
