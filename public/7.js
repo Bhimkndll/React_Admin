@@ -567,7 +567,7 @@ var Check = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles.css */ "./resources/js/components/styles.css");
@@ -761,7 +761,6 @@ var Post = function Post(props) {
 
   var numbers = [40, 70, 80, 100, 20, 200, 0, 20, 10, 15, 10, 10, 100, 210, 110, 103, 102, 101, 10];
   console.log(numbers.slice(-8, -2).reverse());
-  console.log(global.link);
 
   var handlecheckd = function handlecheckd(_ref) {
     var target = _ref.target;
@@ -1444,7 +1443,6 @@ var Post = function Post(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Post);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
