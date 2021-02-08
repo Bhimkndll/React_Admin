@@ -35,8 +35,8 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
     Route::post('signup', 'Auth\ApiAuthController@signup');
   Route::get('signup/activate/{token}', 'Auth\ApiAuthController@signupActivate');
     Route::group([
-      'middleware' => 'auth:sanctum'
-    ], function() {
+/*      'middleware' => 'auth:sanctum'
+*/    ], function() {
 
 
         Route::get('logout', 'Auth\ApiAuthController@logout');
@@ -45,8 +45,10 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
     });
      Route::group([
 /*    'namespace' => 'Auth',
-*/    'middleware' => 'auth:sanctum',
-    'prefix' => 'password'
+*/
+
+/*'middleware' => 'auth:sanctum',
+*/    'prefix' => 'password'
 ], function () {
     Route::post('create', 'PasswordResetController@create');
     Route::get('find/{token}', 'PasswordResetController@find');
@@ -60,8 +62,10 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
 
 Route::get('/bhim','CrudController@index')->name('cruddisply');
 
-Route::post('/contact','CrudController@store')->name('crudestore')->middleware('auth:api');
-Route::get('edit/{id}','CrudController@edit')->name('crud.display');
+Route::post('/contact','CrudController@store')->name('crudestore');
+
+/*->middleware('auth:api');
+*/Route::get('edit/{id}','CrudController@edit')->name('crud.display');
 Route::post('update/{id}','CrudController@update')->name('updatecrud');
 Route::get('/delete/{id}','CrudController@delete')->name('cruddelete');
 
