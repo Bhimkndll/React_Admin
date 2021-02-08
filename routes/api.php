@@ -55,8 +55,8 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
 });
 
  Route::group([
-   'middleware' => 'auth:sanctum'
-], function () {
+/*   'middleware' => 'auth:sanctum'
+*/], function () {
 
 Route::get('/bhim','CrudController@index')->name('cruddisply');
 
