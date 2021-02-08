@@ -1388,7 +1388,10 @@ var Post = function Post(props) {
         return Control(item.id);
       }
     }), item.category.name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      id: "never"
+      id: "never",
+      style: {
+        cursor: "pointer"
+      }
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       style: {
         width: '20px'

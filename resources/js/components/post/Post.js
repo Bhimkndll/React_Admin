@@ -738,7 +738,7 @@ if((item.heading.toLowerCase().indexOf(form.title.toLowerCase() ) === -1 )&&(ite
 
 
             <td><label>
-<input type="checkbox" id="ossm" name="ossm" hidden defaultChecked={item.maincontent?true:false}onClick={()=>Control(item.id)}/>{item.category.name}<div id="never"></div></label>
+<input type="checkbox" id="ossm" name="ossm" hidden defaultChecked={item.maincontent?true:false}onClick={()=>Control(item.id)}/>{item.category.name}<div id="never" style={{cursor:"pointer"}}></div></label>
 
 </td>
 
