@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from'react-router-dom';
 import '../styles.css';
 import Swal from 'sweetalert2';
-
 import { Redirect,useHistory } from 'react-router';
 import { useState, useEffect } from 'react';
 import {useSortableData} from '../Sortt';
@@ -50,7 +49,7 @@ Swal.fire({
 if (result.isConfirmed) {
 let url = `/api/tag/delete/${id}`
 
-        axios.get(url).then(res =>{});
+        axios.get(global.link+url).then(res =>{});
 
         axios.get("/api/tag")
     .then(res=>{
@@ -78,9 +77,9 @@ const create=()=>{
 const handlecreate=(evt)=>{
     evt.preventDefault();
 
-    axios.post(`/api/tag/store`,form)
+    axios.post(global.link+`/api/tag/store`,form)
 
-     axios.get("/api/tag")
+     axios.get(global.link+"/api/tag")
 
 .then(res=>{
 
@@ -103,7 +102,7 @@ const Editcategory = (id) => {
 
 
         let url = `/api/tag/edit/${id}`
-        axios.get(url).then(res =>{
+        axios.get(global.link+url).then(res =>{
       setForm({tag:res.data.tag.Tag_name,id:res.data.tag.id,title:''});
         });
 
@@ -113,9 +112,9 @@ const Editcategory = (id) => {
     const handleSubmit = (evt) => {
        evt.preventDefault();
 
-    axios.post(`/api/tag/save/${form.id}`,form)
+    axios.post(global.link+`/api/tag/save/${form.id}`,form)
 
-     axios.get("/api/tag")
+     axios.get(global.link+"/api/tag")
 
 
 

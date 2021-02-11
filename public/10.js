@@ -133,7 +133,7 @@ var useSortableData = function useSortableData(items) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles.css */ "./resources/js/components/styles.css");
@@ -227,7 +227,7 @@ var Tagcr = function Tagcr(props) {
     }).then(function (result) {
       if (result.isConfirmed) {
         var url = "/api/tag/delete/".concat(id);
-        axios.get(url).then(function (res) {});
+        axios.get(global.link + url).then(function (res) {});
         axios.get("/api/tag").then(function (res) {
           setState({
             tags: res.data.categories
@@ -251,8 +251,8 @@ var Tagcr = function Tagcr(props) {
 
   var handlecreate = function handlecreate(evt) {
     evt.preventDefault();
-    axios.post("/api/tag/store", form);
-    axios.get("/api/tag").then(function (res) {
+    axios.post(global.link + "/api/tag/store", form);
+    axios.get(global.link + "/api/tag").then(function (res) {
       setState({
         tags: res.data.categories
       });
@@ -276,7 +276,7 @@ var Tagcr = function Tagcr(props) {
       update: true
     });
     var url = "/api/tag/edit/".concat(id);
-    axios.get(url).then(function (res) {
+    axios.get(global.link + url).then(function (res) {
       setForm({
         tag: res.data.tag.Tag_name,
         id: res.data.tag.id,
@@ -287,8 +287,8 @@ var Tagcr = function Tagcr(props) {
 
   var handleSubmit = function handleSubmit(evt) {
     evt.preventDefault();
-    axios.post("/api/tag/save/".concat(form.id), form);
-    axios.get("/api/tag").then(function (res) {
+    axios.post(global.link + "/api/tag/save/".concat(form.id), form);
+    axios.get(global.link + "/api/tag").then(function (res) {
       setState({
         tags: res.data.categories
       });
@@ -522,6 +522,7 @@ var Tagcr = function Tagcr(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Tagcr);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
