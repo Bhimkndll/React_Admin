@@ -58,11 +58,11 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
 
 Route::get('/bhim','CrudController@index')->name('cruddisply');
 
-Route::post('/contact','CrudController@store')->name('crudestore')
+Route::post('/contact','CrudController@store')->name('crudestore');
 Route::get('edit/{id}','CrudController@edit')->name('crud.display');
 Route::post('update/{id}','CrudController@update')->name('updatecrud');
 Route::get('/delete/{id}','CrudController@delete')->name('cruddelete');
-Route::post('/category/store','CategoryController@store')->name('crudeestore');
+Route::post('/category/store','CategoryController@store');
 Route::get('/category/edit/{id}','CategoryController@edit')->name('crud.display');
 Route::post('category/save/{id}','CategoryController@save')->name('updatecrud');
 Route::get('category/delete/{id}','CategoryController@delete')->name('cruddelete');
