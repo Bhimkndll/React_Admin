@@ -61,13 +61,11 @@ Route::post('/contact','CrudController@store')->name('crudestore');
 Route::get('edit/{id}','CrudController@edit')->name('crud.display');
 Route::post('update/{id}','CrudController@update')->name('updatecrud');
 Route::get('/delete/{id}','CrudController@delete')->name('cruddelete');
-
-
-Route::post('/category/store','CategoryController@store')->name('crudeestore')
 Route::get('/category/edit/{id}','CategoryController@edit')->name('crud.display');
 Route::post('category/save/{id}','CategoryController@save')->name('updatecrud');
 Route::get('category/delete/{id}','CategoryController@delete')->name('cruddelete');
 Route::get('/category','CategoryController@index')->name('cateview');
+
 
 Route::post('/tag/store','Api\TagController@store')->name('crudeestore');
 Route::get('/tag/edit/{id}','Api\TagController@edit')->name('crud.display');
