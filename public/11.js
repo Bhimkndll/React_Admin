@@ -71,7 +71,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 var Tagcr = react_loadable__WEBPACK_IMPORTED_MODULE_7___default()({
   loader: function loader() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! ./Tag/Tagcr */ "./resources/js/components/Tag/Tagcr.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! ./Tag/Tagcr */ "./resources/js/components/Tag/Tagcr.js"));
   },
   loading: function loading() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading");
@@ -95,7 +95,7 @@ var Verticalsidebar = react_loadable__WEBPACK_IMPORTED_MODULE_7___default()({
 });
 var ProductTable = react_loadable__WEBPACK_IMPORTED_MODULE_7___default()({
   loader: function loader() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ./ProductTable */ "./resources/js/components/ProductTable.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ./ProductTable */ "./resources/js/components/ProductTable.js"));
   },
   loading: function loading() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading");
@@ -103,7 +103,7 @@ var ProductTable = react_loadable__WEBPACK_IMPORTED_MODULE_7___default()({
 });
 var Fotter = react_loadable__WEBPACK_IMPORTED_MODULE_7___default()({
   loader: function loader() {
-    return Promise.all(/*! import() */[__webpack_require__.e(20), __webpack_require__.e(18)]).then(__webpack_require__.bind(null, /*! ./././admin/fotter/Fotter */ "./resources/js/components/admin/fotter/Fotter.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(18)]).then(__webpack_require__.bind(null, /*! ./././admin/fotter/Fotter */ "./resources/js/components/admin/fotter/Fotter.js"));
   },
   loading: function loading() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading");
@@ -119,7 +119,7 @@ var Logout = react_loadable__WEBPACK_IMPORTED_MODULE_7___default()({
 });
 var Profile = react_loadable__WEBPACK_IMPORTED_MODULE_7___default()({
   loader: function loader() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(4), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ./././admin/user/profile */ "./resources/js/components/admin/user/profile.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(4), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ./././admin/user/profile */ "./resources/js/components/admin/user/profile.js"));
   },
   loading: function loading() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading");
@@ -135,7 +135,7 @@ var User = react_loadable__WEBPACK_IMPORTED_MODULE_7___default()({
 });
 var Post = react_loadable__WEBPACK_IMPORTED_MODULE_7___default()({
   loader: function loader() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(6), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ./post/Post */ "./resources/js/components/post/Post.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(6), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ./post/Post */ "./resources/js/components/post/Post.js"));
   },
   loading: function loading() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading");

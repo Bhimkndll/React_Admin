@@ -13,19 +13,19 @@ return [
     |
     */
 
-'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'https://peaceful-earth-77113.herokuapp.com/')),
+/*'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'https://peaceful-earth-77113.herokuapp.com/')),
+*/
+  'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'localhost,127.0.0.1,127.0.0.1:8000,::1')),
 
-   /* 'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'localhost,127.0.0.1,127.0.0.1:8000,::1')),*/
-    /*
-    |--------------------------------------------------------------------------
+   /* |--------------------------------------------------------------------------
     | Expiration Minutes
     |--------------------------------------------------------------------------
     |
     | This value controls the number of minutes until an issued token will be
     | considered expired. If this value is null, personal access tokens do
     | not expire. This won't tweak the lifetime of first-party sessions.
-    |
-    */
+    |*/
+
 
     'expiration' => null,
 
