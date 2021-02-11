@@ -16,7 +16,7 @@ const [update, setUpdate] = React.useState({update:true});
 useEffect(() => {
   let isActive = true;
 
-        axios.get("/api/tag")
+        axios.get(global.link+"/api/tag")
 
 
 .then(res=>{
@@ -51,7 +51,7 @@ let url = `/api/tag/delete/${id}`
 
         axios.get(global.link+url).then(res =>{});
 
-        axios.get("/api/tag")
+        axios.get(global.link+"/api/tag")
     .then(res=>{
   setState({tags:res.data.categories});
 

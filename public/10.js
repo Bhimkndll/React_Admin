@@ -201,7 +201,7 @@ var Tagcr = function Tagcr(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var isActive = true;
-    axios.get("/api/tag").then(function (res) {
+    axios.get(global.link + "/api/tag").then(function (res) {
       if (isActive) {
         setState({
           tags: res.data.categories
@@ -228,7 +228,7 @@ var Tagcr = function Tagcr(props) {
       if (result.isConfirmed) {
         var url = "/api/tag/delete/".concat(id);
         axios.get(global.link + url).then(function (res) {});
-        axios.get("/api/tag").then(function (res) {
+        axios.get(global.link + "/api/tag").then(function (res) {
           setState({
             tags: res.data.categories
           });
