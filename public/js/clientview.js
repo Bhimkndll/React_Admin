@@ -72222,13 +72222,6 @@ var bhim = function bhim() {
   var names = tinker();
   return "{\n    headers: {\n      'Authorization': 'Bearer' + ".concat(names, "\n    }\n  }");
 };
-/*export const instance = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api/',
-  timeout: 1000,
-  headers: {'Authorization': 'Bearer '+tinker()}
-});
-*/
-
 var instance = axios__WEBPACK_IMPORTED_MODULE_1___default.a.create({
   baseURL: 'https://peaceful-earth-77113.herokuapp.com/api/',
   timeout: 1000,
