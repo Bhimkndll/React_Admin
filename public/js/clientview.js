@@ -70946,6 +70946,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_footer_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_footer_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _toker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! .././toker */ "./resources/js/components/toker.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -70957,6 +70958,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -70980,7 +70982,7 @@ var Footers = function Footers() {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var isActive = true;
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/client/fotter").then(function (res) {
+    _toker__WEBPACK_IMPORTED_MODULE_3__["instance"].get("/client/fotter").then(function (res) {
       if (isActive) {
         setFotter({
           fotter: res.data.footer
@@ -72185,10 +72187,44 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {global.link = "https://peaceful-earth-77113.herokuapp.com";
-/*global.link ="http://127.0.0.1:8000";
+/* WEBPACK VAR INJECTION */(function(global) {/*global.link ="https://peaceful-earth-77113.herokuapp.com";
 */
+global.link = "http://127.0.0.1:8000";
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./resources/js/components/toker.js":
+/*!******************************************!*\
+  !*** ./resources/js/components/toker.js ***!
+  \******************************************/
+/*! exports provided: tinker, bhim, instance */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tinker", function() { return tinker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bhim", function() { return bhim; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "instance", function() { return instance; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var tinker = function tinker() {
+  if (localStorage.getItem('token')) {
+    return localStorage.getItem('token');
+  }
+};
+var bhim = function bhim() {
+  var names = tinker();
+  return "{\n    headers: {\n      'Authorization': 'Bearer' + ".concat(names, "\n    }\n  }");
+};
+var instance = axios.create({
+  baseURL: 'http://127.0.0.1:8000/api/',
+  timeout: 1000,
+  headers: {
+    'Authorization': 'Bearer ' + tinker()
+  }
+});
 
 /***/ }),
 

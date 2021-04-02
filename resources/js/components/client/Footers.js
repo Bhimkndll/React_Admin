@@ -2,6 +2,8 @@ import React from 'react';
 import './css/footer.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import {instance} from '.././toker'
+
 const Footers=()=>{
 
 
@@ -14,7 +16,7 @@ const [load, setLoad] = React.useState({loads:false});
 useEffect(() => {
   let isActive = true;
 
-        axios.get("/api/client/fotter")
+        instance.get("/client/fotter")
 
 
 .then(res=>{

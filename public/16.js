@@ -108,26 +108,38 @@ var Login = function Login(props) {
       setEmailerr({
         allemail: ''
       });
+      /*
+      axios.get('https://api.github.com/user', {
+        headers: {
+          'Authorization': `token ${access_token}`
+        }
+      })
+      .then((res) => {
+        console.log(res.data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })*/
+
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.withCredentials = true;
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/sanctum/csrf-cookie').then(function (response) {
-        var res = axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/auth/login", values).then(function (res) {
-          props.history.push('/admin/new');
-        })["catch"](function (error) {
-          console.log(error.response);
+      var res = axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/auth/login", values).then(function (res) {
+        localStorage["token"] = res.data.token;
+        props.history.push('/admin/new');
+      })["catch"](function (error) {
+        console.log(error.response);
 
-          if (error.response.data.errors) {
-            setErr({
-              open: true,
-              all: error.response.data.errors
-            });
-          }
+        if (error.response.data.errors) {
+          setErr({
+            open: true,
+            all: error.response.data.errors
+          });
+        }
 
-          if (error.response.data.message) {
-            setOthererr({
-              allother: error.response.data.message
-            });
-          }
-        });
+        if (error.response.data.message) {
+          setOthererr({
+            allother: error.response.data.message
+          });
+        }
       });
     }
   });

@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 use App\Crud;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Http\Request;
@@ -13,16 +13,16 @@ return $contacts->toJson();
 }
 
     public function store(Request $request ){
-    	$vali = Validator::make($request->all(), [ 
+    	$vali = Validator::make($request->all(), [
        'fullname'=>'required|min:4',
         'address'=>'required|min:5',
         'age'=>'required|min:3',
         ]);
-    	
+
         if($vali->fails()){
             /*$name=$vali->errors()->all();
             return $name;*/
-    
+
         return response(['errors'=>$vali->errors()->all()], 201);
     }
     	$cus=Crud::create([

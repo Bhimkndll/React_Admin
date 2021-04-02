@@ -45,11 +45,29 @@ setErr({all:''});
 setOthererr({other:''});
 setPassworderr({allpass:''});
 setEmailerr({allemail:''});
+
+
+
+
+/*
+axios.get('https://api.github.com/user', {
+  headers: {
+    'Authorization': `token ${access_token}`
+  }
+})
+.then((res) => {
+  console.log(res.data)
+})
+.catch((error) => {
+  console.error(error)
+})*/
+
+
      axios.defaults.withCredentials = true;
-   axios.get('/sanctum/csrf-cookie').then(response => {
 
      const res =axios.post("/api/auth/login",values)
         .then(res=>{
+        localStorage["token"]=res.data.token
 
          props.history.push('/admin/new');
           })
@@ -73,7 +91,7 @@ setOthererr({allother:error.response.data.message});
 
 
 
-});
+
 
      },
    });

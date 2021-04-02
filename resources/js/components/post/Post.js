@@ -12,6 +12,7 @@ import draftToMarkdown from 'draftjs-to-markdown';
 import { EditorState, ContentState, convertFromHTML } from 'draft-js';
 import { Redirect } from "react-router-dom";
  import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
+import {instance} from '.././toker'
 
 import { Modal,Button} from 'react-bootstrap';
 import Sort from '.././Sort';
@@ -65,8 +66,8 @@ console.log(form.tag);
 
 const Control=(id)=>{
   console.log(id);
-let url = `api/post/maincontent/${id}`
-        axios.get(url).then(res =>{
+let url = `/post/maincontent/${id}`
+        instance.get(url).then(res =>{
 
         })
           .catch((error) => console.log(error.message));
@@ -100,7 +101,7 @@ useEffect(() => {
   let isActive = true;
 
 
-        axios.get("/api/post/create")
+        instance.get("/post/create")
         .then(res=>{
       if (isActive) {
   setState({...tate,categories:res.data.categories,tags:res.data.tags});
@@ -136,11 +137,11 @@ Swal.fire({
 
 
 if (result.isConfirmed) {
-let url = `/api/post/destroy/${id}`
+let url = `/post/destroy/${id}`
 
-        axios.get(url).then(res =>{});
+        instance.get(url).then(res =>{});
 
-        axios.get("/api/post/index")
+        instance.get("/post/index")
     .then(res=>{
   setPost({posts:res.data.posts});
 });
@@ -173,11 +174,11 @@ const fd = new FormData();
   fd.append('slug',form.slug);
   fd.append('description',description.editorState && draftToMarkdown(convertToRaw(description.editorState.getCurrentContent())));
 
-axios.post('/api/post/store',fd)
+instance.post('/post/store',fd)
   .then(res=>{
 
 
-        axios.get("/api/post/index")
+        instance.get("/post/index")
     .then(res=>{
   setPost({posts:res.data.posts});
 });
@@ -207,8 +208,8 @@ setBhim({herr:'',derr:'',ierr:'',serr:'',terr:''});
             setHide({hide:false});
             setShowd({display:true});
        setUpdate({update:true});
-       let url = `/api/post/edit/${id}`
-        axios.get(url).then(res =>{
+       let url = `/post/edit/${id}`
+        instance.get(url).then(res =>{
           console.log(res);
           setForm({title:'',id:res.data.posts[0].id,category:res.data.posts[0].category_id,description:res.data.posts[0].description,heading:res.data.posts[0].heading,slug:res.data.posts[0].slug,image:res.data.posts[0].image,cateedit:res.data.posts[0].category_id});
           setTag({tag:res.data.posts[0].tags});
@@ -231,9 +232,9 @@ setDesc({editorState: EditorState.createWithContent(ContentState.createFromText(
        evt.preventDefault();
 
 
-    axios.post(`/api/post/save/${form.id}`,form)
+    instance.post(`/post/save/${form.id}`,form)
 
-     axios.get("/api/post")
+     instance.get("/post")
 
 
 
@@ -284,16 +285,16 @@ const Switch=(id,pid)=>{
   console.log(id);
     console.log(pid);
 
- let url = `/api/post/switch/${id}/${pid}`
-        axios.get(url).then(res =>{
+ let url = `/post/switch/${id}/${pid}`
+        instance.get(url).then(res =>{
 
         });
 }
 
 const Slider=(id)=>{
 
- let url = `/api/post/slider/${id}`
-        axios.get(url).then(res =>{
+ let url = `/post/slider/${id}`
+        instance.get(url).then(res =>{
 
         })
           .catch((error) => console.log(error.message));
@@ -302,8 +303,8 @@ const Slider=(id)=>{
 const Carousel=(id)=>{
 
 console.log(id);
- let url = `/api/post/carousel/${id}`
-        axios.get(url).then(res =>{
+ let url = `/post/carousel/${id}`
+        instance.get(url).then(res =>{
 
         })
           .catch((error) => console.log(error.message));
@@ -331,13 +332,13 @@ const fd = new FormData();
   fd.append('category',form.category);
   fd.append('slug',form.slug);
   fd.append('description',description.editorState && draftToMarkdown(convertToRaw(description.editorState.getCurrentContent())));
-  axios.post(`/api/post/save/${form.id}`,fd)
+  instance.post(`/post/save/${form.id}`,fd)
 .then(res=>{
     setShow(false);
 
-
-axios.get("/api/posts")
+instance.get("/post/index")
 .then(res=>{
+  setPost({posts:res.data.posts});
 
 setForm({title:'',id:'',tag:'',heading:'',description:'',category:'',slug:''});
 setShowd({display:true });
@@ -357,7 +358,11 @@ setShowd({display:true });
     }
 
 });
-
+Swal.fire(
+      'Update!',
+      'Your file has been deleted.',
+      'success'
+    )
 
     }
 
@@ -710,7 +715,7 @@ if((item.heading.toLowerCase().indexOf(form.title.toLowerCase() ) === -1 )&&(ite
 </td>
             <td>{item.heading}</td>
             <td style={{width:"7.5%"}}>
-            <img className="bar-sm"src={process.env.MIX_API_URL+item.image} alt="pic error" style={{width:'70px',height:'35px'}}/>
+            <img className="bar-sm"src={process.env.MIX_URL+item.image} alt="pic error" style={{width:'70px',height:'35px'}}/>
             </td>
 
 

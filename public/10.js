@@ -133,7 +133,7 @@ var useSortableData = function useSortableData(items) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles.css */ "./resources/js/components/styles.css");
@@ -142,6 +142,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _Sortt__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Sortt */ "./resources/js/components/Sortt.js");
+/* harmony import */ var _toker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! .././toker */ "./resources/js/components/toker.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -159,6 +160,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -201,7 +203,7 @@ var Tagcr = function Tagcr(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var isActive = true;
-    axios.get(global.link + "/api/tag").then(function (res) {
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get("/tag").then(function (res) {
       if (isActive) {
         setState({
           tags: res.data.categories
@@ -226,9 +228,9 @@ var Tagcr = function Tagcr(props) {
       confirmButtonText: 'Yes, delete it!'
     }).then(function (result) {
       if (result.isConfirmed) {
-        var url = "/api/tag/delete/".concat(id);
-        axios.get(global.link + url).then(function (res) {});
-        axios.get(global.link + "/api/tag").then(function (res) {
+        var url = "/tag/delete/".concat(id);
+        _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get(url).then(function (res) {});
+        _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get("/tag").then(function (res) {
           setState({
             tags: res.data.categories
           });
@@ -251,8 +253,8 @@ var Tagcr = function Tagcr(props) {
 
   var handlecreate = function handlecreate(evt) {
     evt.preventDefault();
-    axios.post(global.link + "/api/tag/store", form);
-    axios.get(global.link + "/api/tag").then(function (res) {
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].post("/tag/store", form);
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get("/tag").then(function (res) {
       setState({
         tags: res.data.categories
       });
@@ -275,8 +277,8 @@ var Tagcr = function Tagcr(props) {
     setUpdate({
       update: true
     });
-    var url = "/api/tag/edit/".concat(id);
-    axios.get(global.link + url).then(function (res) {
+    var url = "/tag/edit/".concat(id);
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get(url).then(function (res) {
       setForm({
         tag: res.data.tag.Tag_name,
         id: res.data.tag.id,
@@ -287,8 +289,8 @@ var Tagcr = function Tagcr(props) {
 
   var handleSubmit = function handleSubmit(evt) {
     evt.preventDefault();
-    axios.post(global.link + "/api/tag/save/".concat(form.id), form);
-    axios.get(global.link + "/api/tag").then(function (res) {
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].post("/tag/save/".concat(form.id), form);
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get("/tag").then(function (res) {
       setState({
         tags: res.data.categories
       });
@@ -522,7 +524,6 @@ var Tagcr = function Tagcr(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Tagcr);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -553,6 +554,40 @@ var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addS
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/toker.js":
+/*!******************************************!*\
+  !*** ./resources/js/components/toker.js ***!
+  \******************************************/
+/*! exports provided: tinker, bhim, instance */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tinker", function() { return tinker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bhim", function() { return bhim; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "instance", function() { return instance; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var tinker = function tinker() {
+  if (localStorage.getItem('token')) {
+    return localStorage.getItem('token');
+  }
+};
+var bhim = function bhim() {
+  var names = tinker();
+  return "{\n    headers: {\n      'Authorization': 'Bearer' + ".concat(names, "\n    }\n  }");
+};
+var instance = axios.create({
+  baseURL: 'http://127.0.0.1:8000/api/',
+  timeout: 1000,
+  headers: {
+    'Authorization': 'Bearer ' + tinker()
+  }
+});
 
 /***/ }),
 

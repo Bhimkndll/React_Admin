@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { Redirect,useHistory } from 'react-router';
 import { useState, useEffect } from 'react';
 import {useSortableData} from '../Sortt';
+import {instance} from '.././toker'
 
 
 const Tagcr = (props) => {
@@ -16,7 +17,7 @@ const [update, setUpdate] = React.useState({update:true});
 useEffect(() => {
   let isActive = true;
 
-        axios.get(global.link+"/api/tag")
+        instance.get("/tag")
 
 
 .then(res=>{
@@ -47,11 +48,11 @@ Swal.fire({
 
 
 if (result.isConfirmed) {
-let url = `/api/tag/delete/${id}`
+let url = `/tag/delete/${id}`
 
-        axios.get(global.link+url).then(res =>{});
+        instance.get(url).then(res =>{});
 
-        axios.get(global.link+"/api/tag")
+        instance.get("/tag")
     .then(res=>{
   setState({tags:res.data.categories});
 
@@ -77,9 +78,9 @@ const create=()=>{
 const handlecreate=(evt)=>{
     evt.preventDefault();
 
-    axios.post(global.link+`/api/tag/store`,form)
+    instance.post(`/tag/store`,form)
 
-     axios.get(global.link+"/api/tag")
+     instance.get("/tag")
 
 .then(res=>{
 
@@ -101,8 +102,8 @@ const Editcategory = (id) => {
        setUpdate({update:true});
 
 
-        let url = `/api/tag/edit/${id}`
-        axios.get(global.link+url).then(res =>{
+        let url = `/tag/edit/${id}`
+        instance.get(url).then(res =>{
       setForm({tag:res.data.tag.Tag_name,id:res.data.tag.id,title:''});
         });
 
@@ -112,9 +113,9 @@ const Editcategory = (id) => {
     const handleSubmit = (evt) => {
        evt.preventDefault();
 
-    axios.post(global.link+`/api/tag/save/${form.id}`,form)
+    instance.post(`/tag/save/${form.id}`,form)
 
-     axios.get(global.link+"/api/tag")
+     instance.get("/tag")
 
 
 

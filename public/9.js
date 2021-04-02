@@ -491,10 +491,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _profile_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./profile.css */ "./resources/js/components/admin/user/profile.css");
-/* harmony import */ var _profile_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_profile_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Dashboard_Chart1__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../Dashboard/Chart1 */ "./resources/js/components/Dashboard/Chart1.js");
+/* harmony import */ var _toker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../.././toker */ "./resources/js/components/toker.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _profile_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./profile.css */ "./resources/js/components/admin/user/profile.css");
+/* harmony import */ var _profile_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_profile_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Dashboard_Chart1__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../Dashboard/Chart1 */ "./resources/js/components/Dashboard/Chart1.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -512,6 +513,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -547,8 +549,9 @@ var Profile = function Profile(props) {
       setLoad = _React$useState6[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log("bhimbihmbihm");
     var isActive = true;
-    axios.get("/api/profile").then(function (res) {
+    _toker__WEBPACK_IMPORTED_MODULE_3__["instance"].get("/profile").then(function (res) {
       if (isActive) {
         console.log(res);
         setProfile({
@@ -578,8 +581,8 @@ var Profile = function Profile(props) {
 
   var handleSubmit = function handleSubmit(evt) {
     evt.preventDefault();
-    axios.post("/api/profile/save/".concat(profile.user.id), user);
-    axios.get("/api/profile").then(function (res) {
+    _toker__WEBPACK_IMPORTED_MODULE_3__["instance"].post("/profile/save/".concat(profile.user.id), user);
+    _toker__WEBPACK_IMPORTED_MODULE_3__["instance"].get("/profile").then(function (res) {
       setProfile({
         user: res.data.userprofile
       });
@@ -642,7 +645,7 @@ var Profile = function Profile(props) {
     className: "col-sm"
   }, "Activity log In graph", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Dashboard_Chart1__WEBPACK_IMPORTED_MODULE_5__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Dashboard_Chart1__WEBPACK_IMPORTED_MODULE_6__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-sm"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Form control: input"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: handleSubmit
@@ -673,6 +676,40 @@ var Profile = function Profile(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Profile);
+
+/***/ }),
+
+/***/ "./resources/js/components/toker.js":
+/*!******************************************!*\
+  !*** ./resources/js/components/toker.js ***!
+  \******************************************/
+/*! exports provided: tinker, bhim, instance */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tinker", function() { return tinker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bhim", function() { return bhim; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "instance", function() { return instance; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var tinker = function tinker() {
+  if (localStorage.getItem('token')) {
+    return localStorage.getItem('token');
+  }
+};
+var bhim = function bhim() {
+  var names = tinker();
+  return "{\n    headers: {\n      'Authorization': 'Bearer' + ".concat(names, "\n    }\n  }");
+};
+var instance = axios.create({
+  baseURL: 'http://127.0.0.1:8000/api/',
+  timeout: 1000,
+  headers: {
+    'Authorization': 'Bearer ' + tinker()
+  }
+});
 
 /***/ }),
 

@@ -3,7 +3,7 @@ import {Link} from'react-router-dom';
 import './styles.css';
 import Swal from 'sweetalert2';
 import './search.css';
-
+import {instance} from './toker'
 import { Redirect,useHistory } from 'react-router';
 import { useState, useEffect } from 'react';
 import {useSortableData} from './Sortt';
@@ -13,11 +13,19 @@ import {useSortableData} from './Sortt';
  const [loading, setLoad] = React.useState({load:'true'});
 const [tate, setState] = React.useState({bhim:''});
 const [update, setUpdate] = React.useState({update:true});
-useEffect(() => {
-  let isActive = true;
- const access=localStorage.getItem('token-access')
 
-        axios.get(global.link+"/api/category")
+
+
+useEffect(() => {
+   const acces=localStorage.getItem('token')
+console.log(acces);
+  let config = {
+    headers: {
+      'Authorization': 'Bearer ' + acces
+    }
+  }
+  let isActive = true;
+instance.get("/category")
 
 
 .then(res=>{

@@ -12,7 +12,7 @@ import Navbar from './client/Navbar';
 class Clientview extends React.Component {
   render() {
 return (
-        <Router>xqwqwx
+        <Router>
 <Navbar/>
 <div className="container-fluid">
 <>

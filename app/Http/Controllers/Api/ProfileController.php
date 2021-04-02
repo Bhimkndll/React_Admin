@@ -10,9 +10,9 @@ use Auth;
 class ProfileController extends Controller
 {
   public function index(){
-if(Auth::check())
+if(Auth::guard('api')->check())
 
-return response(['userprofile'=>Auth::user()],200);
+return response(['userprofile'=>Auth::guard('api')->user()],200);
 
 else
 	return response(['users'=>'You are hacker you might not have luck today ']);

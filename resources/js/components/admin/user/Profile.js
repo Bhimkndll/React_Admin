@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from'react-router-dom';
 import Swal from 'sweetalert2';
+import {instance} from '../.././toker'
 
 
 import { Redirect,useHistory } from 'react-router';
@@ -17,9 +18,10 @@ const Profile = (props) => {
 
 
 useEffect(() => {
+  console.log("bhimbihmbihm")
    let isActive = true;
 
-        axios.get("/api/profile")
+        instance.get("/profile")
 
 
 .then(res=>{
@@ -50,9 +52,9 @@ setLoad({load:true,icon:false});
     const handleSubmit = (evt) => {
        evt.preventDefault();
 
-    axios.post(`/api/profile/save/${profile.user.id}`,user)
+    instance.post(`/profile/save/${profile.user.id}`,user)
 
-     axios.get("/api/profile")
+     instance.get("/profile")
 
 
 

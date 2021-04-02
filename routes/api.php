@@ -35,6 +35,7 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
     Route::post('signup', 'Auth\ApiAuthController@signup');
   Route::get('signup/activate/{token}', 'Auth\ApiAuthController@signupActivate');
     Route::group([
+      'middleware' => 'auth:api'
     ], function() {
 
 
@@ -44,7 +45,7 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
     });
      Route::group([
 /*    'namespace' => 'Auth',
-*/
+*/    'middleware' => 'auth:api',
     'prefix' => 'password'
 ], function () {
     Route::post('create', 'PasswordResetController@create');
@@ -54,21 +55,23 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
 });
 
  Route::group([
+   'middleware' => 'auth:api'
 ], function () {
 
 Route::get('/bhim','CrudController@index')->name('cruddisply');
 
-Route::post('/contact','CrudController@store')->name('crudestore');
+Route::post('/contact','CrudController@store')->name('crudestore')->middleware('auth:api');
 Route::get('edit/{id}','CrudController@edit')->name('crud.display');
 Route::post('update/{id}','CrudController@update')->name('updatecrud');
 Route::get('/delete/{id}','CrudController@delete')->name('cruddelete');
 
 
-Route::post('/category/store','CategoryController@store')->name('crudeestore');
-Route::get('/category/edit/{id}','CategoryController@edit')->name('crud.display');
-Route::post('category/save/{id}','CategoryController@save')->name('updatecrud');
-Route::get('category/delete/{id}','CategoryController@delete')->name('cruddelete');
-Route::get('/category','CategoryController@index')->name('cateview');
+Route::post('/category/store','Api\CategoryController@store')->name('crudeestore');
+Route::get('/category/edit/{id}','Api\CategoryController@edit')->name('crud.display');
+Route::post('category/save/{id}','Api\CategoryController@save')->name('updatecrud');
+Route::get('category/delete/{id}','Api\CategoryController@delete')->name('cruddelete');
+Route::get('/category','Api\CategoryController@index')->name('cateview')->middleware('auth:api');
+
 
 Route::post('/tag/store','Api\TagController@store')->name('crudeestore');
 Route::get('/tag/edit/{id}','Api\TagController@edit')->name('crud.display');
@@ -104,23 +107,6 @@ Route::post('/navbar/create','Api\NavbarclientController@create')->name('navbar'
 
 
 /*subpost*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
