@@ -571,6 +571,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "instance", function() { return instance; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+'';
 
 var tinker = function tinker() {
   if (localStorage.getItem('token')) {
@@ -581,7 +585,7 @@ var bhim = function bhim() {
   var names = tinker();
   return "{\n    headers: {\n      'Authorization': 'Bearer' + ".concat(names, "\n    }\n  }");
 };
-var instance = axios.create({
+var instance = axios__WEBPACK_IMPORTED_MODULE_1___default.a.create({
   baseURL: 'http://127.0.0.1:8000/api/',
   timeout: 1000,
   headers: {
