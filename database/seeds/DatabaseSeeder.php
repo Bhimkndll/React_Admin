@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
         User::create([
         	'name'=>'bhim',
         	'email'=>'bhi@gmail.com',
-        	'password'=>bcrypt('bhim'),
+        	'password'=>bcrypt('bhimkandel'),
             'activation_token'=>"bhimbhim",
-
+'active'=>1
         ]);
        /* factory(Crud::class,2)->create();
             factory(Category::class,100)->create();

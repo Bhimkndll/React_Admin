@@ -715,7 +715,7 @@ if((item.heading.toLowerCase().indexOf(form.title.toLowerCase() ) === -1 )&&(ite
 </td>
             <td>{item.heading}</td>
             <td style={{width:"7.5%"}}>
-            <img className="bar-sm"src={process.env.MIX_URL+item.image} alt="pic error" style={{width:'70px',height:'35px'}}/>
+            <img className="bar-sm"src={global.link+item.image} alt="pic error" style={{width:'70px',height:'35px'}}/>
             </td>
 
 
