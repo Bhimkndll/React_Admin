@@ -1,45 +1,24 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[21],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[22],{
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/search.css":
-/*!****************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/search.css ***!
-  \****************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./resources/js/components/ProductTable.js":
-/*!*************************************************!*\
-  !*** ./resources/js/components/ProductTable.js ***!
-  \*************************************************/
+/***/ "./resources/js/components/Tag/Tagcr.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Tag/Tagcr.js ***!
+  \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.css */ "./resources/js/components/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles.css */ "./resources/js/components/styles.css");
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _search_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./search.css */ "./resources/js/components/search.css");
-/* harmony import */ var _search_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_search_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _toker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./toker */ "./resources/js/components/toker.js");
-/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _Sortt__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Sortt */ "./resources/js/components/Sortt.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _Sortt__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Sortt */ "./resources/js/components/Sortt.js");
+/* harmony import */ var _toker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! .././toker */ "./resources/js/components/toker.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -67,12 +46,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-var ProductTable = function ProductTable(props) {
+var Tagcr = function Tagcr(props) {
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState({
     id: '',
     title: '',
-    category: ''
+    tag: ''
   }),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       form = _React$useState2[0],
@@ -86,7 +64,7 @@ var ProductTable = function ProductTable(props) {
       setLoad = _React$useState4[1];
 
   var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState({
-    bhim: ''
+    tags: ''
   }),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       tate = _React$useState6[0],
@@ -100,18 +78,11 @@ var ProductTable = function ProductTable(props) {
       setUpdate = _React$useState8[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    var acces = localStorage.getItem('token');
-    console.log(acces);
-    var config = {
-      headers: {
-        'Authorization': 'Bearer ' + acces
-      }
-    };
     var isActive = true;
-    _toker__WEBPACK_IMPORTED_MODULE_5__["instance"].get("/category").then(function (res) {
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get("/tag").then(function (res) {
       if (isActive) {
         setState({
-          bhim: res.data.categories
+          tags: res.data.categories
         });
       }
     })["catch"](function (error) {
@@ -133,11 +104,11 @@ var ProductTable = function ProductTable(props) {
       confirmButtonText: 'Yes, delete it!'
     }).then(function (result) {
       if (result.isConfirmed) {
-        var url = "/api/category/delete/".concat(id);
-        axios.get(global.link + url).then(function (res) {});
-        axios.get("/api/category").then(function (res) {
+        var url = "/tag/delete/".concat(id);
+        _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get(url).then(function (res) {});
+        _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get("/tag").then(function (res) {
           setState({
-            bhim: res.data.categories
+            tags: res.data.categories
           });
         });
         sweetalert2__WEBPACK_IMPORTED_MODULE_3___default.a.fire('Deleted!', 'Your file has been deleted.', 'success');
@@ -150,7 +121,7 @@ var ProductTable = function ProductTable(props) {
       update: false
     });
     setForm({
-      category: "",
+      tag: "",
       id: "",
       title: ""
     });
@@ -158,16 +129,16 @@ var ProductTable = function ProductTable(props) {
 
   var handlecreate = function handlecreate(evt) {
     evt.preventDefault();
-    axios.post(global.link + "/api/category/store", form);
-    axios.get("/api/category").then(function (res) {
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].post("/tag/store", form);
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get("/tag").then(function (res) {
       setState({
-        bhim: res.data.categories
+        tags: res.data.categories
       });
       setLoad({
         load: 'true'
       });
       setForm({
-        category: '',
+        tag: '',
         id: '',
         title: ''
       });
@@ -182,11 +153,11 @@ var ProductTable = function ProductTable(props) {
     setUpdate({
       update: true
     });
-    var url = global.link + "/api/category/edit/".concat(id);
-    axios.get(url).then(function (res) {
+    var url = "/tag/edit/".concat(id);
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get(url).then(function (res) {
       setForm({
-        category: res.data.category.name,
-        id: res.data.category.id,
+        tag: res.data.tag.Tag_name,
+        id: res.data.tag.id,
         title: ''
       });
     });
@@ -194,16 +165,16 @@ var ProductTable = function ProductTable(props) {
 
   var handleSubmit = function handleSubmit(evt) {
     evt.preventDefault();
-    axios.post(global.link + "/api/category/save/".concat(form.id), form);
-    axios.get("/api/category").then(function (res) {
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].post("/tag/save/".concat(form.id), form);
+    _toker__WEBPACK_IMPORTED_MODULE_6__["instance"].get("/tag").then(function (res) {
       setState({
-        bhim: res.data.categories
+        tags: res.data.categories
       });
       setLoad({
         load: 'true'
       });
       setForm({
-        category: '',
+        tag: '',
         id: '',
         title: ''
       });
@@ -211,7 +182,7 @@ var ProductTable = function ProductTable(props) {
     sweetalert2__WEBPACK_IMPORTED_MODULE_3___default.a.fire('Update', 'Your file has been Update.', 'success');
   };
 
-  var _require$useSortableD = __webpack_require__(/*! ./Sortt.js */ "./resources/js/components/Sortt.js").useSortableData(tate.bhim),
+  var _require$useSortableD = __webpack_require__(/*! ../Sortt.js */ "./resources/js/components/Sortt.js").useSortableData(tate.tags),
       items = _require$useSortableD.items,
       requestSort = _require$useSortableD.requestSort,
       sortConfig = _require$useSortableD.sortConfig;
@@ -229,7 +200,7 @@ var ProductTable = function ProductTable(props) {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: __webpack_require__(/*! ../Add.gif */ "./resources/js/Add.gif"),
+    src: __webpack_require__(/*! ../../Add.gif */ "./resources/js/Add.gif"),
     onClick: function onClick() {
       return create();
     },
@@ -268,9 +239,9 @@ var ProductTable = function ProductTable(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     className: "form-control",
-    name: "category",
+    name: "tag",
     onChange: handleChange,
-    value: form.category,
+    value: form.tag,
     placeholder: "Enter the Categoryname",
     required: true
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -327,9 +298,9 @@ var ProductTable = function ProductTable(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "button",
     onClick: function onClick() {
-      return requestSort('name');
+      return requestSort('Tag_name');
     },
-    className: getClassNamesFor('name')
+    className: getClassNamesFor('Tag_name')
   }, "Name")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     scope: "col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -403,24 +374,24 @@ var ProductTable = function ProductTable(props) {
     },
     className: getClassNamesFor('')
   }, "Actions")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tfoot", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "name"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, loading.load == 'true' && items.map(function (item) {
-    if (form.title !== "" && item.name.toLowerCase().indexOf(form.title.toLowerCase()) === -1) {
+    if (form.title !== "" && item.Tag_name.toLowerCase().indexOf(form.title.toLowerCase()) === -1) {
       return null;
     }
 
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
       key: item.id
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.Tag_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       "data-toggle": "modal",
       "data-target": "#exampleModalCenter",
       onClick: function onClick() {
         return Editcategory(item.id);
       },
-      src: __webpack_require__(/*! ../edit.png */ "./resources/js/edit.png")
+      src: __webpack_require__(/*! ../../edit.png */ "./resources/js/edit.png")
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: {
         marginLeft: '10%'
       },
-      src: __webpack_require__(/*! ../Delete.gif */ "./resources/js/Delete.gif"),
+      src: __webpack_require__(/*! ../../Delete.gif */ "./resources/js/Delete.gif"),
       onClick: function onClick() {
         return removeData(item.id);
       }
@@ -428,38 +399,7 @@ var ProductTable = function ProductTable(props) {
   })))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (ProductTable);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
-
-/***/ }),
-
-/***/ "./resources/js/components/search.css":
-/*!********************************************!*\
-  !*** ./resources/js/components/search.css ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/postcss-loader/src??ref--6-2!./search.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/search.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
+/* harmony default export */ __webpack_exports__["default"] = (Tagcr);
 
 /***/ })
 

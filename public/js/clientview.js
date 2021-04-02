@@ -72187,9 +72187,9 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {/*global.link ="https://peaceful-earth-77113.herokuapp.com";
+/* WEBPACK VAR INJECTION */(function(global) {global.link = "https://peaceful-earth-77113.herokuapp.com";
+/*global.link ="http://127.0.0.1:8000/";
 */
-global.link = "http://127.0.0.1:8000/";
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
@@ -72222,8 +72222,15 @@ var bhim = function bhim() {
   var names = tinker();
   return "{\n    headers: {\n      'Authorization': 'Bearer' + ".concat(names, "\n    }\n  }");
 };
-var instance = axios__WEBPACK_IMPORTED_MODULE_1___default.a.create({
+/*export const instance = axios.create({
   baseURL: 'http://127.0.0.1:8000/api/',
+  timeout: 1000,
+  headers: {'Authorization': 'Bearer '+tinker()}
+});
+*/
+
+var instance = axios__WEBPACK_IMPORTED_MODULE_1___default.a.create({
+  baseURL: 'https://peaceful-earth-77113.herokuapp.com/api/',
   timeout: 1000,
   headers: {
     'Authorization': 'Bearer ' + tinker()

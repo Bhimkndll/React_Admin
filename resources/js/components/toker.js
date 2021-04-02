@@ -19,9 +19,14 @@ export const bhim=()=>{
 
 
 }
-export const instance = axios.create({
+/*export const instance = axios.create({
   baseURL: 'http://127.0.0.1:8000/api/',
   timeout: 1000,
   headers: {'Authorization': 'Bearer '+tinker()}
 });
-
+*/
+export const instance = axios.create({
+  baseURL: 'https://peaceful-earth-77113.herokuapp.com/api/',
+  timeout: 1000,
+  headers: {'Authorization': 'Bearer '+tinker()}
+});
